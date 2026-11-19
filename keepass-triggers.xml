@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TriggerCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Triggers>
+		<Trigger>
+			<Guid>En04Jrp7RZKKyUnFNvE1yw==</Guid>
+			<Name>KeePass HID Bridge: add buttons</Name>
+			<Events>
+				<Event>
+					<TypeGuid>2PMe6cxpSBuJxfzi6ktqlw==</TypeGuid>   <!-- Trigger when KeePass starts -->
+					<Parameters />
+				</Event>
+			</Events>
+			<Conditions />
+			<Actions>
+				<Action>
+					<TypeGuid>lYGPRZlmSYirPoboGpZoNg==</TypeGuid>   <!-- Add custom toolbar button -->
+					<Parameters>
+						<Parameter>bridge_login</Parameter>
+						<Parameter>Type login</Parameter>
+						<Parameter>Type the selected entry's username and password on the bridge's device</Parameter>
+					</Parameters>
+				</Action>
+				<Action>
+					<TypeGuid>lYGPRZlmSYirPoboGpZoNg==</TypeGuid>   <!-- Add custom toolbar button -->
+					<Parameters>
+						<Parameter>bridge_password</Parameter>
+						<Parameter>Type password</Parameter>
+						<Parameter>Type the selected entry's password on the bridge's device</Parameter>
+					</Parameters>
+				</Action>
+			</Actions>
+		</Trigger>
+		<Trigger>
+			<Guid>JBOWbxUsR4+MXs9s3dLrPw==</Guid>
+			<Name>KeePass HID Bridge: type login</Name>
+			<Events>
+				<Event>
+					<TypeGuid>R0dZkpenQ6K5aB8fwvebkg==</TypeGuid>   <!-- Trigger when the bridge login button is pressed -->
+					<Parameters>
+						<Parameter>bridge_login</Parameter>
+					</Parameters>
+				</Event>
+			</Events>
+			<Conditions />
+			<Actions>
+				<Action>
+					<TypeGuid>2uX4OwcwTBOe7y66y27kxw==</TypeGuid>   <!-- Execute PowerShell script -->
+					<Parameters>
+						<Parameter>powershell.exe</Parameter>
+						<Parameter>-NoExit</Parameter>
+						<Parameter>False</Parameter>
+						<Parameter>0</Parameter>
+						<Parameter />
+					</Parameters>
+				</Action>
+			</Actions>
+		</Trigger>
+		<Trigger>
+			<Guid>GOoygs8QTnWTToPWuE0vIQ==</Guid>
+			<Name>KeePass HID Bridge: type password</Name>
+			<Events>
+				<Event>
+					<TypeGuid>R0dZkpenQ6K5aB8fwvebkg==</TypeGuid>   <!-- Trigger when the bridge password button is pressed -->
+					<Parameters>
+						<Parameter>bridge_password</Parameter>
+					</Parameters>
+				</Event>
+			</Events>
+			<Conditions />
+			<Actions>
+				<Action>
+					<TypeGuid>2uX4OwcwTBOe7y66y27kxw==</TypeGuid>   <!-- Execute PowerShell script -->
+					<Parameters>
+						<Parameter>powershell.exe</Parameter>
+						<Parameter>-NoExit</Parameter>
+						<Parameter>False</Parameter>
+						<Parameter>0</Parameter>
+						<Parameter />
+					</Parameters>
+				</Action>
+			</Actions>
+		</Trigger>
+	</Triggers>
+</TriggerCollection>
